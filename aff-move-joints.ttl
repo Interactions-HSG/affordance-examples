@@ -26,6 +26,16 @@
 				js:maximum "900"^^xsd:int;
 				js:minimum "210"^^xsd:int;
 				js:propertyName "elbow"
+				],
+				[ a js:IntegerSchema, ex:WristRAngle;
+				js:maximum "830"^^xsd:int;
+              			js:minimum "200"^^xsd:int;
+				js:propertyName "wristAngle"
+				],
+				[ a js:IntegerSchema, ex:WristTAngle;
+				js:maximum "1023"^^xsd:int;
+              			js:minimum "0"^^xsd:int;
+				js:propertyName "wristRotation"
 				]
 			];
 			js:required "joints"	
