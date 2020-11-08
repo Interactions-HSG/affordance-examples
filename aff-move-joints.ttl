@@ -1,0 +1,32 @@
+@prefix td: <https://www.w3.org/2019/wot/td#> .
+@prefix htv: <http://www.w3.org/2011/http#> .
+@prefix hctl: <https://www.w3.org/2019/wot/hypermedia#> .
+@prefix js: <https://www.w3.org/2019/wot/json-schema#> .
+@prefix ex: <http://example.org/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<af1> a td:ActionAffordance, ex:Move;
+	td:hasForm [ hctl:hasTarget <https://api.interactions.ics.unisg.ch/leubot1/v1.2/posture> ; 
+    htv:methodName "PUT"^^xsd:string
+    ] ;
+	td:hasInputSchema [ a js:ObjectSchema;
+		js:properties [ a js:ObjectSchema;
+			js:propertyName "joints";
+			js:properties [ a js:IntegerSchema, ex:BaseAngle;
+				js:maximum "830"^^xsd:int;
+				js:minimum "200"^^xsd:int;
+				js:propertyName "base"
+				],
+				[ a js:IntegerSchema, ex:ShoulderAngle;
+				js:maximum "810"^^xsd:int;
+				js:minimum "205"^^xsd:int;
+				js:propertyName "shoulder"
+				],
+				[ a js:IntegerSchema, ex:ElbowAngle;
+				js:maximum "900"^^xsd:int;
+				js:minimum "210"^^xsd:int;
+				js:propertyName "elbow"
+				]
+			];
+			js:required "joints"	
+		].
