@@ -1,0 +1,27 @@
+@prefix td: <https://www.w3.org/2019/wot/td#> .
+@prefix htv: <http://www.w3.org/2011/http#> .
+@prefix hctl: <https://www.w3.org/2019/wot/hypermedia#> .
+@prefix js: <https://www.w3.org/2019/wot/json-schema#> .
+@prefix ex: <http://example.org/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<af2> a td:ActionAffordance, ex:Move;
+	td:hasForm [
+            hctl:hasTarget <https://api.interactions.ics.unisg.ch/leubot1/v1.2/posture> ; 
+        ] ;
+	td:hasInputSchema [ a js:ObjectSchema;
+		js:properties [ a js:ObjectSchema, ex:GripperPosition, ex:3DCoordinates;
+			js:propertyName "position";
+			js:properties [ a js:IntegerSchema, ex:XCoordinate;
+				js:propertyName "x"
+				],
+				[ a js:IntegerSchema, ex:YCoordinate;
+				js:propertyName "y"
+				],
+				[ a js:IntegerSchema, ex:ZCoordinate;
+				js:propertyName "z"
+				]
+			];
+			js:required "position"	
+		].
+			
