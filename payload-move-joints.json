@@ -1,0 +1,7 @@
+{ "joints":
+	{
+		"base": 300,
+		"shoulder": 500,
+		"elbow": 600
+	}
+}
