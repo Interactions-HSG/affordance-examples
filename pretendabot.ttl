@@ -1,5 +1,6 @@
 @prefix td: <https://www.w3.org/2019/wot/td#> .
 @prefix wotsec: <https://www.w3.org/2019/wot/security#> .
+@prefix htv: <http://www.w3.org/2011/http#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix cherrybot: <http://www.example.org/cherrybot#> .
 @prefix hctl: <https://www.w3.org/2019/wot/hypermedia#> .
