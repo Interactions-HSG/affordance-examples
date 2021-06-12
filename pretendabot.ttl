@@ -8,9 +8,8 @@
 @prefix js: <https://www.w3.org/2019/wot/json-schema#> .
 @prefix eve: <http://w3id.org/eve#> .
 
-<https://api.interactions.ics.unisg.ch/pretendabot> a <https://www.ufactory.cc/products/xarm-7-2020>,
-    eve:Artifact, td:Thing;
-  dct:title "Cherry Bot";
+<https://api.interactions.ics.unisg.ch/pretendabot> a eve:Artifact, td:Thing;
+  dct:title "Pretendabot";
   td:hasActionAffordance [ a cherrybot:PostOperator, td:ActionAffordance;
       td:hasForm [
           htv:methodName "POST";
