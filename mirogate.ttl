@@ -1,0 +1,60 @@
+@prefix td: <https://www.w3.org/2019/wot/td#> .
+@prefix cov: <http://www.example.org/coap-binding#> .
+@prefix hctl: <https://www.w3.org/2019/wot/hypermedia#> .
+@prefix wotsec: <https://www.w3.org/2019/wot/security#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix js: <https://www.w3.org/2019/wot/json-schema#> .
+@prefix ex: <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<coap://0.0.0.0:5683/mirogate> a td:Thing;
+  dct:title "mirogate";
+  dct:description "A Thing that provides affordances to consumers by using MiroCards.";
+  td:hasSecurityConfiguration [ a wotsec:NoSecurityScheme
+    ];
+  td:hasPropertyAffordance [ a td:PropertyAffordance, ex:ObservePose, js:ObjectSchema;
+      dct:title "Observe pose";
+      td:hasForm [
+          cov:methodName "GET";
+          hctl:hasTarget <coap://0.0.0.0:5683/pose>;
+          hctl:forContentType "application/json";
+          hctl:hasOperationType td:observeProperty;
+          hctl:forSubProtocol "http://www.example.org/coap-binding#observe"
+        ];
+      td:isObservable false;
+      js:properties [ a js:IntegerSchema, ex:Value;
+          js:propertyName "value";
+          js:minimum "0"^^xsd:int;
+          js:maximum "4"^^xsd:int
+        ]
+    ], [ a td:PropertyAffordance, ex:ObserveHumidity, js:ObjectSchema;
+      dct:title "Observe humidity";
+      td:hasForm [
+          cov:methodName "GET";
+          hctl:hasTarget <coap://0.0.0.0:5683/humidity>;
+          hctl:forContentType "application/json";
+          hctl:hasOperationType td:observeProperty;
+          hctl:forSubProtocol "http://www.example.org/coap-binding#observe"
+        ];
+      td:isObservable false;
+      js:properties [ a js:NumberSchema, ex:Value;
+          js:propertyName "value";
+          js:minimum 1.5E1;
+          js:maximum 4.0E1
+        ]
+    ], [ a td:PropertyAffordance, ex:ObserveTemperature, js:ObjectSchema;
+      dct:title "Observe temperature";
+      td:hasForm [
+          cov:methodName "GET";
+          hctl:hasTarget <coap://0.0.0.0:5683/temperature>;
+          hctl:forContentType "application/json";
+          hctl:hasOperationType td:observeProperty;
+          hctl:forSubProtocol "http://www.example.org/coap-binding#observe"
+        ];
+      td:isObservable false;
+      js:properties [ a js:NumberSchema, ex:Value;
+          js:propertyName "value";
+          js:minimum 1.0E1;
+          js:maximum 2.6E1
+        ]
+    ].
