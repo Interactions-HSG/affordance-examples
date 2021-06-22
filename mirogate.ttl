@@ -8,8 +8,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <coap://0.0.0.0:5683/mirogate> a td:Thing;
-  dct:title "Mirogate";
-  dct:description "A Thing that provides affordances to consumers by using MiroCards.";
+  dct:title "mirogate";
   td:hasSecurityConfiguration [ a wotsec:NoSecurityScheme
     ];
   td:hasPropertyAffordance [ a td:PropertyAffordance, ex:ObservePose, js:ObjectSchema;
@@ -19,7 +18,7 @@
           hctl:hasTarget <coap://0.0.0.0:5683/pose>;
           hctl:forContentType "application/json";
           hctl:hasOperationType td:observeProperty;
-          hctl:forSubProtocol "http://www.example.org/coap-binding#observe"
+          hctl:forSubProtocol cov:observe
         ];
       td:isObservable false;
       js:properties [ a js:IntegerSchema, ex:Value;
@@ -34,7 +33,7 @@
           hctl:hasTarget <coap://0.0.0.0:5683/humidity>;
           hctl:forContentType "application/json";
           hctl:hasOperationType td:observeProperty;
-          hctl:forSubProtocol "http://www.example.org/coap-binding#observe"
+          hctl:forSubProtocol cov:observe
         ];
       td:isObservable false;
       js:properties [ a js:NumberSchema, ex:Value;
@@ -49,7 +48,7 @@
           hctl:hasTarget <coap://0.0.0.0:5683/temperature>;
           hctl:forContentType "application/json";
           hctl:hasOperationType td:observeProperty;
-          hctl:forSubProtocol "http://www.example.org/coap-binding#observe"
+          hctl:forSubProtocol cov:observe
         ];
       td:isObservable false;
       js:properties [ a js:NumberSchema, ex:Value;
@@ -57,4 +56,5 @@
           js:minimum 1.0E1;
           js:maximum 2.6E1
         ]
-    ].
+    ];
+  dct:description "A Thing that provides affordances to consumers by using MiroCards." .
