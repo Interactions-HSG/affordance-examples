@@ -8,7 +8,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <coap://0.0.0.0:5683/mirogate> a td:Thing;
-  dct:title "mirogate";
+  dct:title "Mirogate";
   dct:description "A Thing that provides affordances to consumers by using MiroCards.";
   td:hasSecurityConfiguration [ a wotsec:NoSecurityScheme
     ];
