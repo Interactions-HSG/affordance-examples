@@ -7,7 +7,7 @@
 @prefix ex: <http://example.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<coap://0.0.0.0:5683/mirogate> a td:Thing;
+<coap://127.0.0.1:5683/mirogate> a td:Thing;
   dct:title "mirogate";
   td:hasSecurityConfiguration [ a wotsec:NoSecurityScheme
     ];
@@ -15,7 +15,7 @@
       dct:title "Observe pose";
       td:hasForm [
           cov:methodName "GET";
-          hctl:hasTarget <coap://localhost:5683/pose>;
+          hctl:hasTarget <coap://127.0.0.1:5683/pose>;
           hctl:forContentType "application/json";
           hctl:hasOperationType td:observeProperty;
           hctl:forSubProtocol cov:observe
@@ -30,7 +30,7 @@
       dct:title "Observe humidity";
       td:hasForm [
           cov:methodName "GET";
-          hctl:hasTarget <coap://localhost:5683/humidity>;
+          hctl:hasTarget <coap://127.0.0.1:5683/humidity>;
           hctl:forContentType "application/json";
           hctl:hasOperationType td:observeProperty;
           hctl:forSubProtocol cov:observe
@@ -45,7 +45,7 @@
       dct:title "Observe temperature";
       td:hasForm [
           cov:methodName "GET";
-          hctl:hasTarget <coap://localhost:5683/temperature>;
+          hctl:hasTarget <coap://127.0.0.1:5683/temperature>;
           hctl:forContentType "application/json";
           hctl:hasOperationType td:observeProperty;
           hctl:forSubProtocol cov:observe
