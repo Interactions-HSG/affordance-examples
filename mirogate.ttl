@@ -20,7 +20,7 @@
           hctl:hasOperationType td:observeProperty;
           hctl:forSubProtocol cov:observe
         ];
-      td:isObservable false;
+      td:isObservable true;
       js:properties [ a js:IntegerSchema, ex:Value;
           js:propertyName "value";
           js:minimum "0"^^xsd:int;
@@ -35,7 +35,7 @@
           hctl:hasOperationType td:observeProperty;
           hctl:forSubProtocol cov:observe
         ];
-      td:isObservable false;
+      td:isObservable true;
       js:properties [ a js:NumberSchema, ex:Value;
           js:propertyName "value";
           js:minimum 1.5E1;
@@ -50,7 +50,7 @@
           hctl:hasOperationType td:observeProperty;
           hctl:forSubProtocol cov:observe
         ];
-      td:isObservable false;
+      td:isObservable true;
       js:properties [ a js:NumberSchema, ex:Value;
           js:propertyName "value";
           js:minimum 1.0E1;
