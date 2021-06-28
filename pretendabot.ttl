@@ -25,13 +25,6 @@
             ];
           js:required "email", "name"
         ]
-    ], [ a cherrybot:DeleteOperator, td:ActionAffordance;
-      td:hasForm [
-          htv:methodName "DELETE";
-          hctl:forContentType "application/json";
-          hctl:hasOperationType td:invokeAction;
-          hctl:hasTarget <https://api.interactions.ics.unisg.ch/pretendabot/operator/%7Btoken%7D>
-        ]
     ], [ a cherrybot:Initialize, td:ActionAffordance;
       td:hasForm [
           htv:methodName "PUT";
