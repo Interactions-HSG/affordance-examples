@@ -8,7 +8,7 @@
 @prefix js: <https://www.w3.org/2019/wot/json-schema#> .
 @prefix eve: <http://w3id.org/eve#> .
 
-<https://api.interactions.ics.unisg.ch/pretendabot> a eve:Artifact, td:Thing;
+<https://raw.githubusercontent.com/Interactions-HSG/affordance-examples/main/pretendabot.ttl> a eve:Artifact, td:Thing;
   dct:title "Pretendabot";
   td:hasActionAffordance [ a cherrybot:PostOperator, td:ActionAffordance;
       td:hasForm [
