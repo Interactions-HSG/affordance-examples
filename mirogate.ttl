@@ -30,7 +30,7 @@
       dct:title "Observe humidity";
       td:hasForm [
           cov:methodName "GET";
-          hctl:hasTarget <coap://10.2.1.198:5683/humidity>;
+          hctl:hasTarget <coap://10.2.1.227:5683/humidity>;
           hctl:forContentType "application/json";
           hctl:hasOperationType td:observeProperty;
           hctl:forSubProtocol cov:observe
