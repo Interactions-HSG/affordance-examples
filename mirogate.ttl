@@ -15,7 +15,7 @@
       dct:title "Observe pose";
       td:hasForm [
           cov:methodName "GET";
-          hctl:hasTarget <coap://127.0.0.1:5683/pose>;
+          hctl:hasTarget <coap://10.2.1.198:5683/pose>;
           hctl:forContentType "application/json";
           hctl:hasOperationType td:observeProperty;
           hctl:forSubProtocol cov:observe
@@ -30,7 +30,7 @@
       dct:title "Observe humidity";
       td:hasForm [
           cov:methodName "GET";
-          hctl:hasTarget <coap://127.0.0.1:5683/humidity>;
+          hctl:hasTarget <coap://10.2.1.198:5683/humidity>;
           hctl:forContentType "application/json";
           hctl:hasOperationType td:observeProperty;
           hctl:forSubProtocol cov:observe
@@ -45,7 +45,7 @@
       dct:title "Observe temperature";
       td:hasForm [
           cov:methodName "GET";
-          hctl:hasTarget <coap://127.0.0.1:5683/temperature>;
+          hctl:hasTarget <coap://10.2.1.198/temperature>;
           hctl:forContentType "application/json";
           hctl:hasOperationType td:observeProperty;
           hctl:forSubProtocol cov:observe
