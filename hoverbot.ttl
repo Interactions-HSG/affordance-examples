@@ -12,13 +12,12 @@
   td:hasSecurityConfiguration [ a wotsec:NoSecurityScheme
     ];
   td:hasBase <http://192.168.1.6/>;
-  td:hasPropertyAffordance [ a td:PropertyAffordance, hsg:MpegVideoStream, js:StringSchema;
+  td:hasPropertyAffordance [ a td:PropertyAffordance, hsg:MpegVideoStream, js:NumberSchema;
       td:name "stream";
-      dct:description "Video stream of the farmland";
       td:hasForm [
           htv:methodName "GET";
           hctl:hasTarget <http://192.168.1.6/stream>;
-          hctl:forContentType "video/mpeg";
+          hctl:forContentType "application/json";
           hctl:hasOperationType td:readProperty
         ];
       td:isObservable false
