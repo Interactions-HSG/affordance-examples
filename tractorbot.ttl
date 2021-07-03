@@ -7,7 +7,7 @@
 @prefix hsg: <http://semantics.interactions.ics.unisg.ch/hackathon21#> .
 @prefix om: <http://www.ontology-of-units-of-measure.org/resource/om-2/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-​
+
 <urn:tractorbot_spock> a td:Thing, hsg:Robot;
   dct:title "Smart tractor";
   td:hasSecurityConfiguration [ a wotsec:NoSecurityScheme
