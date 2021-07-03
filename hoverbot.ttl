@@ -6,7 +6,7 @@
 @prefix js: <https://www.w3.org/2019/wot/json-schema#> .
 @prefix hsg: <http://semantics.interactions.ics.unisg.ch/hackathon21#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-​
+
 <urn:hoverbot_garuda> a td:Thing, hsg:Camera;
   dct:title "Smart tractor";
   td:hasSecurityConfiguration [ a wotsec:NoSecurityScheme
