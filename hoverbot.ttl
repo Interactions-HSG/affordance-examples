@@ -18,7 +18,7 @@
       td:hasForm [
           htv:methodName "GET";
           hctl:hasTarget <http://192.168.1.6/stream>;
-          hctl:forContentType "video/mpeg";
+          hctl:forContentType "application/json";
           hctl:hasOperationType td:readProperty
         ];
       td:isObservable false
@@ -29,7 +29,7 @@
       td:hasForm [
           htv:methodName "POST";
           hctl:hasTarget <http://192.168.1.6/capture>;
-          hctl:forContentType "video/mpeg";
+          hctl:forContentType "application/json";
           hctl:hasOperationType td:invokeAction
         ]
     ] .
