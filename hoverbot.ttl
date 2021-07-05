@@ -12,7 +12,7 @@
   td:hasSecurityConfiguration [ a wotsec:NoSecurityScheme
     ];
   td:hasBase <http://192.168.1.6/>;
-  td:hasPropertyAffordance [ a td:PropertyAffordance, hsg:MpegVideoStream;
+  td:hasPropertyAffordance [ a td:PropertyAffordance, hsg:MpegVideoStream, js:StringSchema;
       td:name "stream";
       td:hasForm [
           htv:methodName "GET";
