@@ -8,10 +8,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <urn:hoverbot_garuda> a td:Thing, hsg:Camera;
-  dct:title "Camera up in the air";
+  dct:title "Aerial survey drone";
   td:hasSecurityConfiguration [ a wotsec:NoSecurityScheme
     ];
-  td:hasBase <http://192.168.1.6/>;
+  td:hasBase <http://110.10.10.105/>;
   td:hasPropertyAffordance [ a td:PropertyAffordance, hsg:MpegVideoStream, js:StringSchema;
       td:name "stream";
       td:hasForm [
