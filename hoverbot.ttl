@@ -16,19 +16,19 @@
       td:name "stream";
       td:hasForm [
           htv:methodName "GET";
-          hctl:hasTarget <http://192.168.1.6/stream>;
+          hctl:hasTarget <http://110.10.10.105/stream>;
           hctl:forContentType "video/mpeg";
           hctl:hasOperationType td:readProperty
         ];
       td:isObservable false
-    ];
-  td:hasActionAffordance [ a td:ActionAffordance, hsg:Image;
-      td:name "takeSnapshot";
+    ], [ a td:PropertyAffordance, hsg:Image, js:StringSchema;
+      td:name "capture";
       dct:description "Grab a picture of the farmland";
       td:hasForm [
-          htv:methodName "POST";
-          hctl:hasTarget <http://192.168.1.6/capture>;
+          htv:methodName "GET";
+          hctl:hasTarget <http://110.10.10.105/capture>;
           hctl:forContentType "image/jpeg";
-          hctl:hasOperationType td:invokeAction
-        ]
+          hctl:hasOperationType td:readProperty
+        ];
+      td:isObservable false
     ] .
