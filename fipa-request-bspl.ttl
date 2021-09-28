@@ -4,7 +4,7 @@
 @prefix ex: <http://www.example.org#> .
 @prefix fipa-request: <http://www.example.org/hmas-fipa/protocols/request#> .
 
-<> a bspl:InteractionProtocol, fipa-request:;
+<> a bspl:InteractionProtocol, fipa-request:RequestProtocol;
    bspl:hasName "FIPA-Request-Protocol";
    bspl:hasKey "ID";
    bspl:hasRole [ a bspl:Role, fipa-request:Initiator;
