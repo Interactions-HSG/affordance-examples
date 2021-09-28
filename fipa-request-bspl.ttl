@@ -1,0 +1,74 @@
+@prefix ex: <http://example.org/> .
+@prefix td: <https://www.w3.org/2019/wot/td#> .
+@prefix bspl: <http://www.example.org/hmas-bspl#> .
+@prefix ex: <http://www.example.org#> .
+@prefix fipa-request: <http://www.example.org/hmas-fipa/protocols/request#> .
+
+<> a bspl:InteractionProtocol, fipa-request:;
+   bspl:hasName "FIPA-Request-Protocol";
+   bspl:hasKey "ID";
+   bspl:hasRole [ a bspl:Role, fipa-request:Initiator;
+                  bspl:hasName "initiator"],
+    			[ a bspl:Role, fipa-request:Participant;
+         		  bspl:hasName "participant"];
+   bspl:hasParameters [ a bspl:Parameter, bspl:Key ; 
+  					    bspl:hasParameterName "ID" ],
+    				  [ a bspl:Parameter, ex:Action;
+                        bspl:hasParameterName "action"],
+    				  [ a bspl:Parameter, ex:Confirmation; 
+                        bspl:hasParameterName "confirmation"],
+    				  [ a bspl:Parameter, ex:Finished;
+                        bspl:hasParameterName "finished"];
+   bspl:hasMessage [ a bspl:Message, fipa-request:Request;
+                     bspl:hasName "Request";
+                     bspl:hasKey "ID";
+                     bspl:hasOut "ID", "action";
+                     bspl:to "participant";
+                     bspl:from "initiator";
+  					 bspl:hasParameters "ID", "action" 
+					],
+    				[ a bspl:Message, fipa-request:Agree;
+                     bspl:hasName "Agree";
+                     bspl:hasKey "ID";
+                     bspl:hasIn "ID";
+                     bspl:hasOut "confirmation";
+                     bspl:to "initiator";
+                     bspl:from "participant";
+  					 bspl:hasParameters "ID", "confirmation" 
+					],
+    				[ a bspl:Message, fipa-request:Refuse;
+                     bspl:hasName "Refuse";
+                     bspl:hasKey "ID";
+                     bspl:hasIn "ID";
+                     bspl:hasOut "confirmation", "finished";
+                     bspl:to "initiator";
+                     bspl:from "participant";
+  					 bspl:hasParameters "ID", "confirmation", "finished"
+					],
+    				[ a bspl:Message, fipa-request:Fail;
+                     bspl:hasName "Fail";
+                     bspl:hasKey "ID";
+                     bspl:hasIn "ID", "confirmation";
+                     bspl:hasOut "finished";
+                     bspl:to "initiator";
+                     bspl:from "participant";
+  					 bspl:hasParameters "ID", "confirmation", "finished"
+					],
+    				[ a bspl:Message, fipa-request:Done;
+                     bspl:hasName "Done";
+                     bspl:hasKey "ID";
+                     bspl:hasIn "ID", "confirmation";
+                     bspl:hasOut "finished";
+                     bspl:to "initiator";
+                     bspl:from "participant";
+  					 bspl:hasParameters "ID", "confirmation", "finished"
+					],
+  					[ a bspl:Message, fipa-request:Result;
+                     bspl:hasName "Done";
+                     bspl:hasKey "ID";
+                     bspl:hasIn "ID", "confirmation";
+                     bspl:hasOut "finished";
+                     bspl:to "initiator";
+                     bspl:from "participant";
+  					 bspl:hasParameters "ID", "confirmation", "finished"
+					].
