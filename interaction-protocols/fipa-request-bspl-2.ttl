@@ -1,0 +1,90 @@
+@prefix ex: <http://example.org/> .
+@prefix td: <https://www.w3.org/2019/wot/td#> .
+@prefix bspl: <http://www.example.org/hmas-bspl#> .
+@prefix ex: <http://www.example.org#> .
+@prefix js: <https://www.w3.org/2019/wot/json-schema#> .
+@prefix fipa-request: <http://www.example.org/hmas-fipa/protocols/request#> .
+@base <http://example.org/protocols/bspl-fipa-request#> .
+
+<> a bspl:InteractionProtocol;
+   bspl:hasName "FIPA-Request-Protocol";
+   bspl:hasEnactment <http://ex.org/protocols/bspl-fipa-request#enactment>; 
+   bspl:hasRole <#initiator>, <#participant>;
+   bspl:hasParameters <#enactment>,
+    				  <#action>,
+    				  <#conf>,
+    				  <#finished> ;
+   bspl:hasMessage [ a bspl:Message, fipa-request:Request;
+                     bspl:hasName "Request";
+                     bspl:hasKey <#enactment>;
+                     bspl:hasOut <#enactment>, <#action>;
+                     bspl:to <#participant>;
+                     bspl:from <#initiator>;
+  					 bspl:hasParameters <#enactment>, <#action> 
+					],
+    				[ a bspl:Message, fipa-request:Agree;
+                     bspl:hasName "Agree";
+                     bspl:hasKey <#enactment>;
+                     bspl:hasIn <#enactment>;
+                     bspl:hasOut <#conf>;
+                     bspl:to <#initiator>;
+                     bspl:from <#participant>;
+  					 bspl:hasParameters <#enactment>, <#conf>
+					],
+    				[ a bspl:Message, fipa-request:Refuse;
+                     bspl:hasName "Refuse";
+                     bspl:hasKey <#enactment>;
+                     bspl:hasIn <#enactment>;
+                     bspl:hasOut <#conf>, <#finished>;
+                     bspl:to <#initiator>;
+                     bspl:from <#participant>;
+  					 bspl:hasParameters <#enactment>, <#conf>, <#finished>
+					],
+    				[ a bspl:Message, fipa-request:Fail;
+                     bspl:hasName "Fail";
+                     bspl:hasKey <#enactment>;
+                     bspl:hasIn <#enactment>, <#conf>;
+                     bspl:hasOut <#finished>;
+                     bspl:to <#initiator>;
+                     bspl:from <#participant>;
+  					 bspl:hasParameters <#enactment>, <#conf>, <#finished>
+					],
+    				[ a bspl:Message, fipa-request:Done;
+                     bspl:hasName "Done";
+                     bspl:hasKey <#enactment>;
+                     bspl:hasIn <#enactment>, <#conf>;
+                     bspl:hasOut <#finished>;
+                     bspl:to <#initiator>;
+                     bspl:from <#participant>;
+  					 bspl:hasParameters <#enactment>, <#conf>, <#finished>
+					],
+  					[ a bspl:Message, fipa-request:Result;
+                     bspl:hasName "Done";
+                     bspl:hasKey <#enactment>;
+                     bspl:hasIn <#enactment>, <#conf>;
+                     bspl:hasOut <#finished>;
+                     bspl:to <#initiator>;
+                     bspl:from <#participant>;
+  					 bspl:hasParameters <#enactment>, <#conf>, <#finished>
+					].
+
+#Enactment
+<#enactment> a bspl:Enactment, bspl:Parameter, xsd:anyURI;
+             bspl:hasParameterName "ID".
+
+#Roles
+<#initiator> a bspl:Role, fipa-request:Initiator;
+             bspl:hasName "initiator".
+
+<#participant> a bspl:Role, fipa-request:Participant;
+               bspl:hasName "participant".
+
+#Parameters
+<#action> a ex:Action, bspl:Parameter, js:StringSchema;
+          bspl:hasParameterName "action".
+
+<#conf> a ex:Confirmation, bspl:Parameter, js:StringSchema;
+        bspl:hasParameterName "confirmation".
+
+<#finished> a ex:Finished, bspl:Parameter, js:StringSchema;
+            bspl:hasParameterName "finished".
