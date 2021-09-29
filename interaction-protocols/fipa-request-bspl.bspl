@@ -1,0 +1,10 @@
+FIPA-Request {
+	roles I , P // Initiator , Participant
+	parameters out ID key, out job , out conf , out finished
+	I -> P: Request [out ID, out job ]
+	P -> I : Agree [ in ID, out conf ]
+	P -> I : Refuse [ in ID, out conf , out finished ]
+	P -> I : Fail [ in ID, in conf , out finished ]
+	P -> I : Done [ in ID, in conf , out finished ]
+	P -> I : Result [ in ID, in conf , out finished ]
+}
