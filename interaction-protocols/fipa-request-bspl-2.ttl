@@ -16,57 +16,57 @@
     				  <#finished> ;
    bspl:hasMessage [ a bspl:Message, fipa-request:Request;
                      bspl:hasName "Request";
-                     bspl:hasKey <#enactment>;
+                     bspl:hasEnactment <#enactment>;
                      bspl:hasOut <#enactment>, <#action>;
                      bspl:to <#participant>;
                      bspl:from <#initiator>;
-  					 bspl:hasParameters <#enactment>, <#action> 
-					],
-    				[ a bspl:Message, fipa-request:Agree;
+  		     bspl:hasParameters <#enactment>, <#action> 
+		   ],
+    		   [ a bspl:Message, fipa-request:Agree;
                      bspl:hasName "Agree";
-                     bspl:hasKey <#enactment>;
+                     bspl:hasEnactment <#enactment>;
                      bspl:hasIn <#enactment>;
                      bspl:hasOut <#conf>;
                      bspl:to <#initiator>;
                      bspl:from <#participant>;
-  					 bspl:hasParameters <#enactment>, <#conf>
-					],
-    				[ a bspl:Message, fipa-request:Refuse;
+  		     bspl:hasParameters <#enactment>, <#conf>
+		   ],
+    		   [ a bspl:Message, fipa-request:Refuse;
                      bspl:hasName "Refuse";
-                     bspl:hasKey <#enactment>;
+                     bspl:hasEnactment <#enactment>;
                      bspl:hasIn <#enactment>;
                      bspl:hasOut <#conf>, <#finished>;
                      bspl:to <#initiator>;
                      bspl:from <#participant>;
-  					 bspl:hasParameters <#enactment>, <#conf>, <#finished>
-					],
-    				[ a bspl:Message, fipa-request:Fail;
+  		     bspl:hasParameters <#enactment>, <#conf>, <#finished>
+		   ],
+    	           [ a bspl:Message, fipa-request:Fail;
                      bspl:hasName "Fail";
-                     bspl:hasKey <#enactment>;
+                     bspl:hasEnactment <#enactment>;
                      bspl:hasIn <#enactment>, <#conf>;
                      bspl:hasOut <#finished>;
                      bspl:to <#initiator>;
                      bspl:from <#participant>;
-  					 bspl:hasParameters <#enactment>, <#conf>, <#finished>
-					],
-    				[ a bspl:Message, fipa-request:Done;
+  		     bspl:hasParameters <#enactment>, <#conf>, <#finished>
+		   ],
+    		   [ a bspl:Message, fipa-request:Done;
                      bspl:hasName "Done";
-                     bspl:hasKey <#enactment>;
+                     bspl:hasEnactment <#enactment>;
                      bspl:hasIn <#enactment>, <#conf>;
                      bspl:hasOut <#finished>;
                      bspl:to <#initiator>;
                      bspl:from <#participant>;
-  					 bspl:hasParameters <#enactment>, <#conf>, <#finished>
-					],
-  					[ a bspl:Message, fipa-request:Result;
+  	             bspl:hasParameters <#enactment>, <#conf>, <#finished>
+		   ],
+  		   [ a bspl:Message, fipa-request:Result;
                      bspl:hasName "Done";
-                     bspl:hasKey <#enactment>;
+                     bspl:hasEnactment <#enactment>;
                      bspl:hasIn <#enactment>, <#conf>;
                      bspl:hasOut <#finished>;
                      bspl:to <#initiator>;
                      bspl:from <#participant>;
-  					 bspl:hasParameters <#enactment>, <#conf>, <#finished>
-					].
+  		     bspl:hasParameters <#enactment>, <#conf>, <#finished>
+		   ].
 
 #Enactment
 <#enactment> a bspl:Enactment, bspl:Parameter, xsd:anyURI;
