@@ -20,7 +20,9 @@
                      bspl:hasOut <#enactment>, <#action>;
                      bspl:to <#participant>;
                      bspl:from <#initiator>;
-  		     bspl:hasParameters <#enactment>, <#action> 
+             		 bspl:hasMessageSchema [ a js:ObjectSchema, bspl:MessageSchema;
+                                             js:properties <#enactment>, <#action>
+  								           ]
 		   ],
     		   [ a bspl:Message, fipa-request:Agree;
                      bspl:hasName "Agree";
@@ -29,7 +31,9 @@
                      bspl:hasOut <#conf>;
                      bspl:to <#initiator>;
                      bspl:from <#participant>;
-  		     bspl:hasParameters <#enactment>, <#conf>
+                     bspl:hasMessageSchema [ a js:ObjectSchema, bspl:MessageSchema;
+                                             js:properties <#enactment>, <#conf>
+  								           ]
 		   ],
     		   [ a bspl:Message, fipa-request:Refuse;
                      bspl:hasName "Refuse";
@@ -38,7 +42,9 @@
                      bspl:hasOut <#conf>, <#finished>;
                      bspl:to <#initiator>;
                      bspl:from <#participant>;
-  		     bspl:hasParameters <#enactment>, <#conf>, <#finished>
+                     bspl:hasMessageSchema [ a js:ObjectSchema, bspl:MessageSchema;
+                                             js:properties <#enactment>, <#conf>, <#finished>
+  								           ]
 		   ],
     	           [ a bspl:Message, fipa-request:Fail;
                      bspl:hasName "Fail";
@@ -47,7 +53,9 @@
                      bspl:hasOut <#finished>;
                      bspl:to <#initiator>;
                      bspl:from <#participant>;
-  		     bspl:hasParameters <#enactment>, <#conf>, <#finished>
+                     bspl:hasMessageSchema [ a js:ObjectSchema, bspl:MessageSchema;
+                                             js:properties <#enactment>, <#conf>, <#finished>
+  								           ]
 		   ],
     		   [ a bspl:Message, fipa-request:Done;
                      bspl:hasName "Done";
@@ -56,7 +64,9 @@
                      bspl:hasOut <#finished>;
                      bspl:to <#initiator>;
                      bspl:from <#participant>;
-  	             bspl:hasParameters <#enactment>, <#conf>, <#finished>
+                     bspl:hasMessageSchema [ a js:ObjectSchema, bspl:MessageSchema;
+                                             js:properties <#enactment>, <#conf>, <#finished>
+  								           ]
 		   ],
   		   [ a bspl:Message, fipa-request:Result;
                      bspl:hasName "Done";
@@ -65,7 +75,9 @@
                      bspl:hasOut <#finished>;
                      bspl:to <#initiator>;
                      bspl:from <#participant>;
-  		     bspl:hasParameters <#enactment>, <#conf>, <#finished>
+                     bspl:hasMessageSchema [ a js:ObjectSchema, bspl:MessageSchema;
+                                             js:properties <#enactment>, <#conf>, <#finished>
+  								           ]
 		   ].
 
 #Enactment
